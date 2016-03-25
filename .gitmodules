@@ -1,0 +1,12 @@
+[submodule "v2.5.0/protobuf"]
+	path = v2.5.0/protobuf
+	url = https://github.com/google/protobuf.git
+[submodule "v2.6.1/protobuf"]
+	path = v2.6.1/protobuf
+	url = https://github.com/google/protobuf.git
+[submodule "v3.0.0-beta-1/protobuf"]
+	path = v3.0.0-beta-1/protobuf
+	url = https://github.com/google/protobuf.git
+[submodule "v3.0.0-beta-2/protobuf"]
+	path = v3.0.0-beta-2/protobuf
+	url = https://github.com/google/protobuf.git
