@@ -16,3 +16,6 @@
 [submodule "v2.6.1c/protobuf"]
 	path = v2.6.1c/protobuf
 	url = https://github.com/google/protobuf
+[submodule "protobuf"]
+	path = protobuf
+	url = https://github.com/google/protobuf
