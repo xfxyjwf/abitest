@@ -17,9 +17,15 @@ if [ ! -f "src/protoc" ]; then
   make -j
 fi
 
-cd java/core
+cd java
+if [ -d core ]; then
+  cd core
+  JAVA_PATH=java/core
+else
+  JAVA_PATH=java
+fi
 if [ ! -f "test.lst" ]; then
-  mvn package &> /tmp/$$.mvn.log
+  mvn package 2>&1 | tee /tmp/$$.mvn.log
   grep "^Running " /tmp/$$.mvn.log | sed "s/Running //" > test.lst
 fi
 
@@ -49,7 +55,7 @@ jar cf ../../test.jar $(<../c)
 popd  # protobuf
 
 mkdir -p head
-cp -f protobuf/java/core/test.lst head/test.lst
-cp -f protobuf/java/core/target/protobuf.jar head/protobuf.jar
-cp -f protobuf/java/core/generated.jar head/generated.jar
-cp -f protobuf/java/core/test.jar head/test.jar
+cp -f protobuf/$JAVA_PATH/test.lst head/test.lst
+cp -f protobuf/$JAVA_PATH/target/protobuf.jar head/protobuf.jar
+cp -f protobuf/$JAVA_PATH/generated.jar head/generated.jar
+cp -f protobuf/$JAVA_PATH/test.jar head/test.jar
