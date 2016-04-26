@@ -1,0 +1,16 @@
+package crosstest;
+
+option java_outer_classname = "FooProtos";
+
+message Foo {
+  enum Type {
+    FOO0 = 0;
+    FOO1 = 1;
+    FOO2 = 2;
+    FOO3 = 3;
+  }
+
+  optional int32 value = 1;
+
+  extensions 100 to max;
+}

@@ -1,0 +1,26 @@
+package crosstest;
+
+option java_outer_classname = "BazProtos";
+
+import "foo.proto";
+import "bar.proto";
+
+message Baz {
+  extend Foo {
+    optional Baz foo_baz = 102;
+  }
+  extend Bar {
+    optional Baz bar_baz = 103;
+  }
+
+  optional int32 value = 1;
+
+  optional Foo foo_value = 2;
+  optional Foo.Type foo_type = 3;
+
+  optional Bar bar_value = 4;
+  optional Bar.Type bar_type = 5;
+
+  extensions 100 to max;
+}
+

@@ -1,0 +1,22 @@
+package crosstest;
+
+option java_outer_classname = "BarProtos";
+
+import "foo.proto";
+
+message Bar {
+  extend Foo {
+    optional Bar foo_bar = 101;
+  }
+  enum Type {
+    BAR0 = 0;
+    BAR1 = 1;
+    BAR2 = 2;
+  }
+
+  optional int32 value = 1;
+  optional Foo foo_value = 2;
+  optional Foo.Type foo_type = 3;
+
+  extensions 100 to max;
+}
