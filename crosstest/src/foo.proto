@@ -1,6 +1,7 @@
 package crosstest;
 
 option java_outer_classname = "FooProtos";
+option optimize_for = LITE_RUNTIME;
 
 message Foo {
   enum Type {
