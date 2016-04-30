@@ -22,3 +22,25 @@ in pure Java sense. For example, we may have public methods that are actually
 protobuf internal and should only be accessed in protobuf generated classes. We
 may change or remove these methods and don't guarantee ABI compatibility for
 such cases.
+
+Sub-directories:
+* deps: test dependencies like junit.
+* v2.5.0: compiled runtime/generated code/tests.
+* v2.6.1: compiled runtime/generated code/tests.
+* v3.0.0-beta-1: compiled runtime/generated code/tests.
+* v3.0.0-beta-2: compiled runtime/generated code/tests.
+
+* tests_v250: modified v2.5.0 unit tests. removed the ones that are
+              intentionally broken after a runtime upgrade.
+* v2.5.0c: mostly the same as v2.5.0 but the tests are from tests_v250.
+* tests_v261: modified v2.6.1 unit tests. removed the ones that are
+              intentionally broken after a runtime upgrade.
+* v2.6.1c: mostly the same as v2.6.1 but the tests are from tests_v261.
+
+Instructions:
+  $ git submodule init
+  $ git submodule update
+  $ git clone https://github.com/google/protobuf
+  $ ./build.sh
+  $ ./run.sh v2.5.0c head
+  $ ./run.sh v2.6.1c head
